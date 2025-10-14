@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulado ENEM - 30 Questões</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+  <div class="bg-gray-800 p-8 rounded-2xl shadow-2xl max-w-3xl w-full text-center">
+    <h1 class="text-3xl font-bold text-yellow-400 mb-6">Simulado ENEM - 30 Questões</h1>
+    <div id="quiz-container"></div>
+    <button id="next-btn" class="hidden bg-yellow-400 text-black font-bold px-6 py-3 rounded-lg mt-6 hover:bg-yellow-500 transition">Próxima questão</button>
+    <div id="result" class="mt-8 text-xl font-semibold hidden"></div>
+  </div>
+
+  <script>
+    const quizData = [
+      { pergunta: "1️⃣ Em qual ano o ENEM foi criado?",
+        opcoes: ["1995", "1998", "2001", "2005"],
+        correta: 1,
+        explicacao: "O ENEM foi criado em 1998 pelo MEC para avaliar o desempenho dos estudantes ao final da educação básica."
+      },
+      { pergunta: "2️⃣ Qual é o valor de π (pi) aproximado?",
+        opcoes: ["2.12", "3.14", "3.33", "4.13"],
+        correta: 1,
+        explicacao: "O valor aproximado de π (pi) é 3,141592..., usado em cálculos com círculos."
+      },
+      { pergunta: "3️⃣ O que é fotossíntese?",
+        opcoes: ["Respiração das plantas", "Transformação da luz solar em energia química", "Reprodução vegetal", "Absorção de nutrientes do solo"],
+        correta: 1,
+        explicacao: "Na fotossíntese, as plantas transformam luz solar, CO₂ e água em energia e oxigênio."
+      },
+      { pergunta: "4️⃣ Qual país é o maior em extensão territorial?",
+        opcoes: ["China", "Brasil", "Rússia", "Canadá"],
+        correta: 2,
+        explicacao: "A Rússia é o maior país do mundo, com cerca de 17 milhões de km²."
+      },
+      { pergunta: "5️⃣ Qual desses elementos é um metal?",
+        opcoes: ["Oxigênio", "Enxofre", "Ferro", "Nitrogênio"],
+        correta: 2,
+        explicacao: "O ferro é um metal usado em construções e ligas metálicas."
+      },
+      { pergunta: "6️⃣ Qual é o bioma predominante na região Norte do Brasil?",
+        opcoes: ["Caatinga", "Cerrado", "Mata Atlântica", "Amazônia"],
+        correta: 3,
+        explicacao: "A Floresta Amazônica cobre a maior parte da região Norte do Brasil."
+      },
+      { pergunta: "7️⃣ Qual é a principal fonte de energia no Brasil?",
+        opcoes: ["Carvão mineral", "Energia eólica", "Energia hidrelétrica", "Energia solar"],
+        correta: 2,
+        explicacao: "A maior parte da energia brasileira vem das usinas hidrelétricas."
+      },
+      { pergunta: "8️⃣ Quem foi o autor de 'Os Sertões'?",
+        opcoes: ["Machado de Assis", "Euclides da Cunha", "Lima Barreto", "Graciliano Ramos"],
+        correta: 1,
+        explicacao: "Euclides da Cunha escreveu 'Os Sertões', obra sobre a Guerra de Canudos."
+      },
+      { pergunta: "9️⃣ A água ferve a quantos graus Celsius ao nível do mar?",
+        opcoes: ["90°C", "95°C", "100°C", "110°C"],
+        correta: 2,
+        explicacao: "Ao nível do mar, a água ferve a 100°C sob pressão normal."
+      },
+      { pergunta: "🔟 O que indica o pH?",
+        opcoes: ["Temperatura", "Nível de acidez ou basicidade", "Densidade", "Pressão"],
+        correta: 1,
+        explicacao: "O pH mede o grau de acidez (baixo pH) ou basicidade (alto pH) de uma solução."
+      },
+      { pergunta: "11️⃣ Qual é a capital do estado de Tocantins?",
+        opcoes: ["Palmas", "Belém", "Araguaína", "Manaus"],
+        correta: 0,
+        explicacao: "Palmas foi planejada e construída para ser a capital do Tocantins."
+      },
+      { pergunta: "12️⃣ A Primeira Guerra Mundial começou em qual ano?",
+        opcoes: ["1905", "1914", "1918", "1920"],
+        correta: 1,
+        explicacao: "A Primeira Guerra começou em 1914, após o assassinato do arquiduque Francisco Ferdinando."
+      },
+      { pergunta: "13️⃣ Qual é a função principal das mitocôndrias?",
+        opcoes: ["Armazenar DNA", "Produzir energia", "Sintetizar proteínas", "Armazenar nutrientes"],
+        correta: 1,
+        explicacao: "Mitocôndrias produzem ATP, a principal fonte de energia celular."
+      },
+      { pergunta: "14️⃣ Qual dessas figuras tem quatro lados iguais e ângulos retos?",
+        opcoes: ["Retângulo", "Trapézio", "Quadrado", "Losango"],
+        correta: 2,
+        explicacao: "O quadrado possui quatro lados iguais e ângulos de 90°."
+      },
+      { pergunta: "15️⃣ Quem escreveu 'Dom Casmurro'?",
+        opcoes: ["Machado de Assis", "José de Alencar", "Clarice Lispector", "Graciliano Ramos"],
+        correta: 0,
+        explicacao: "Machado de Assis é o autor de 'Dom Casmurro', com o famoso personagem Bentinho."
+      },
+      { pergunta: "16️⃣ O que significa DNA?",
+        opcoes: ["Ácido desoxirribonucleico", "Ácido ribonucleico", "Desoxirribose nucleotídeo", "Desoxiribonitrogênio ácido"],
+        correta: 0,
+        explicacao: "DNA significa Ácido Desoxirribonucleico, responsável por armazenar informações genéticas."
+      },
+      { pergunta: "17️⃣ Em que continente fica o Egito?",
+        opcoes: ["África", "Ásia", "Europa", "América"],
+        correta: 0,
+        explicacao: "O Egito está localizado no norte da África."
+      },
+      { pergunta: "18️⃣ Quem pintou a Mona Lisa?",
+        opcoes: ["Michelangelo", "Leonardo da Vinci", "Van Gogh", "Pablo Picasso"],
+        correta: 1,
+        explicacao: "A Mona Lisa é uma das obras mais famosas de Leonardo da Vinci."
+      },
+      { pergunta: "19️⃣ Qual gás é essencial para a respiração humana?",
+        opcoes: ["Nitrogênio", "Oxigênio", "Hidrogênio", "Dióxido de carbono"],
+        correta: 1,
+        explicacao: "O oxigênio é indispensável para a respiração celular humana."
+      },
+      { pergunta: "20️⃣ Qual é o maior planeta do Sistema Solar?",
+        opcoes: ["Terra", "Saturno", "Júpiter", "Netuno"],
+        correta: 2,
+        explicacao: "Júpiter é o maior planeta do Sistema Solar."
+      },
+      { pergunta: "21️⃣ Qual desses números é primo?",
+        opcoes: ["4", "9", "11", "15"],
+        correta: 2,
+        explicacao: "11 é divisível apenas por 1 e por ele mesmo."
+      },
+      { pergunta: "22️⃣ Qual é o símbolo químico do ouro?",
+        opcoes: ["Ag", "Au", "O", "Gd"],
+        correta: 1,
+        explicacao: "O símbolo químico do ouro é Au (do latim aurum)."
+      },
+      { pergunta: "23️⃣ Qual oceano banha o litoral leste do Brasil?",
+        opcoes: ["Atlântico", "Pacífico", "Índico", "Ártico"],
+        correta: 0,
+        explicacao: "O oceano Atlântico banha todo o litoral brasileiro."
+      },
+      { pergunta: "24️⃣ Qual o resultado de 12 x 8?",
+        opcoes: ["88", "92", "96", "108"],
+        correta: 2,
+        explicacao: "12 vezes 8 é igual a 96."
+      },
+      { pergunta: "25️⃣ Qual desses animais é um mamífero?",
+        opcoes: ["Jacaré", "Sapo", "Golfinho", "Tartaruga"],
+        correta: 2,
+        explicacao: "O golfinho é um mamífero aquático que amamenta seus filhotes."
+      },
+      { pergunta: "26️⃣ Qual desses países é europeu?",
+        opcoes: ["Chile", "Egito", "Espanha", "Japão"],
+        correta: 2,
+        explicacao: "A Espanha está localizada na Península Ibérica, na Europa."
+      },
+      { pergunta: "27️⃣ Qual é o menor número primo?",
+        opcoes: ["0", "1", "2", "3"],
+        correta: 2,
+        explicacao: "O número 2 é o menor e o único número primo par."
+      },
+      { pergunta: "28️⃣ Em que estado brasileiro fica a cidade de Gramado?",
+        opcoes: ["Santa Catarina", "Rio Grande do Sul", "Paraná", "Minas Gerais"],
+        correta: 1,
+        explicacao: "Gramado é uma famosa cidade turística do Rio Grande do Sul."
+      },
+      { pergunta: "29️⃣ Quem foi o primeiro presidente do Brasil?",
+        opcoes: ["Getúlio Vargas", "Dom Pedro II", "Deodoro da Fonseca", "Floriano Peixoto"],
+        correta: 2,
+        explicacao: "Marechal Deodoro da Fonseca foi o primeiro presidente da República."
+      },
+      { pergunta: "30️⃣ Qual é o idioma oficial de Moçambique?",
+        opcoes: ["Inglês", "Francês", "Português", "Espanhol"],
+        correta: 2,
+        explicacao: "Moçambique foi colonizado por Portugal, e o português é seu idioma oficial."
+      }
+    ];
+
+    const quizContainer = document.getElementById("quiz-container");
+    const nextBtn = document.getElementById("next-btn");
+    const resultDiv = document.getElementById("result");
+
+    let perguntaAtual = 0;
+    let respostasUsuario = new Array(quizData.length).fill(null);
+
+    function carregarPergunta() {
+      const q = quizData[perguntaAtual];
+      quizContainer.innerHTML = `
+        <h2 class="text-xl font-semibold mb-6">${q.pergunta}</h2>
+        <div class="space-y-3">
+          ${q.opcoes.map((op, i) => `
+            <button class="w-full bg-gray-700 py-3 rounded-lg transition opcao ${respostasUsuario[perguntaAtual] === i ? 'bg-yellow-500 text-black' : 'hover:bg-gray-600'}" data-index="${i}">
+              ${op}
+            </button>
+          `).join('')}
+        </div>
+      `;
+      nextBtn.classList.remove("hidden");
+      document.querySelectorAll(".opcao").forEach(btn => {
+        btn.addEventListener("click", selecionarOpcao);
+      });
+    }
+
+    function selecionarOpcao(e) {
+      const index = parseInt(e.target.dataset.index);
+      respostasUsuario[perguntaAtual] = index;
+      const botoes = document.querySelectorAll(".opcao");
+      botoes.forEach(btn => btn.classList.remove("bg-yellow-500", "text-black"));
+      e.target.classList.add("bg-yellow-500", "text-black");
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (perguntaAtual < quizData.length - 1) {
+        perguntaAtual++;
+        carregarPergunta();
+      } else {
+        mostrarResultado();
+      }
+    });
+
+    function mostrarResultado() {
+      let acertos = 0;
+      let errosDetalhados = [];
+
+      quizData.forEach((q, i) => {
+        if (respostasUsuario[i] === q.correta) {
+          acertos++;
+        } else {
+          errosDetalhados.push({
+            pergunta: q.pergunta,
+            correta: q.opcoes[q.correta],
+            explicacao: q.explicacao
+          });
+        }
+      });
+
+      quizContainer.innerHTML = "";
+      nextBtn.classList.add("hidden");
+      resultDiv.classList.remove("hidden");
+
+      let htmlResultado = `
+        ✅ Você acertou <span class="text-green-400">${acertos}</span> de 
+        <span class="text-yellow-400">${quizData.length}</span> questões.
+      `;
+
+      if (errosDetalhados.length > 0) {
+        htmlResultado += `<div class="mt-6 text-left">
+          <h3 class="text-red-400 font-bold text-lg mb-2">❌ Questões incorretas:</h3>
+          <ul class="space-y-3">`;
+
+        errosDetalhados.forEach(erro => {
+          htmlResultado += `
+            <li class="bg-gray-700 p-3 rounded-lg">
+              <strong>${erro.pergunta}</strong><br>
+              ✅ Resposta correta: <span class="text-green-400">${erro.correta}</span><br>
+              💡 Explicação: ${erro.explicacao}
+            </li>
+          `;
+        });
+
+        htmlResultado += `</ul></div>`;
+      }
+
+      htmlResultado += `
+        <button onclick="reiniciar()" class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-500 mt-8">
+          Tentar novamente
+        </button>
+      `;
+
+      resultDiv.innerHTML = htmlResultado;
+    }
+
+    function reiniciar() {
+      perguntaAtual = 0;
+      respostasUsuario = new Array(quizData.length).fill(null);
+      resultDiv.classList.add("hidden");
+      carregarPergunta();
+    }
+
+    carregarPergunta();
+  </script>
+</body>
+</html>
