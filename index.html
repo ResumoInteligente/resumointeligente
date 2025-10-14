@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questões ENEM 2025 - E-book Completo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-blue': '#0F172A',
+                        'gold': '#F6C85F',
+                        'light-gold': '#FEF3C7'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
+        }
+        
+        .gold-glow {
+            box-shadow: 0 0 30px rgba(246, 200, 95, 0.3);
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse-glow {
+            from {
+                box-shadow: 0 0 20px rgba(246, 200, 95, 0.4);
+            }
+            to {
+                box-shadow: 0 0 40px rgba(246, 200, 95, 0.8);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .book-icon {
+            background: linear-gradient(45deg, #F6C85F, #FEF3C7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-full text-white font-sans">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-gold opacity-10 rounded-full blur-xl floating"></div>
+            <div class="absolute bottom-20 right-10 w-40 h-40 bg-gold opacity-5 rounded-full blur-2xl floating" style="animation-delay: -1s;"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <!-- Book Icon -->
+            <div class="mb-8 fade-in">
+                <svg class="w-20 h-20 mx-auto book-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
+                </svg>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">
+                <span class="text-gold">🌟 Questão do Enem 2025</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 fade-in">
+                O GUIA COMPLETO PARA VOCÊ ACERTAR AS QUESTÕES MAIS COBRADAS DO ENEM!
+            </p>
+            
+            <div class="glass-card rounded-2xl p-8 mb-8 fade-in">
+                <p class="text-lg mb-6">Prepare-se com o melhor e-book de estudos para o Enem 2025:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-gold text-xl">📘</span>
+                        <span>Conteúdo atualizado</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-gold text-xl">🧠</span>
+                        <span>Estratégias de resolução</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-gold text-xl">💡</span>
+                        <span>Dicas práticas e resumos rápidos</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-gold text-xl">📄</span>
+                        <span>Modelos e exemplos de questões</span>
+                    </div>
+                    <div class="flex items-center space-x-3 md:col-span-2 justify-center">
+                        <span class="text-gold text-xl">🎯</span>
+                        <span>Foco total no que realmente cai na prova</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="bg-gold text-dark-blue font-bold text-xl px-12 py-4 rounded-full hover:scale-105 transform transition-all duration-300 pulse-glow fade-in">
+                QUERO MEU E-BOOK AGORA
+            </button>
+        </div>
+    </section>
+
+    <!-- Diferencial Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">
+                <span class="text-gold">💎</span> POR QUE ESSE E-BOOK É DIFERENTE?
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card rounded-xl p-6 fade-in hover:scale-105 transition-all duration-300">
+                    <div class="text-gold text-2xl mb-4">✅</div>
+                    <p>Feito especialmente para quem quer melhorar o desempenho no Enem</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 fade-in hover:scale-105 transition-all duration-300">
+                    <div class="text-gold text-2xl mb-4">✅</div>
+                    <p>Explicações objetivas e fáceis de entender</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 fade-in hover:scale-105 transition-all duration-300">
+                    <div class="text-gold text-2xl mb-4">✅</div>
+                    <p>Questões comentadas e estratégias de resolução</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 fade-in hover:scale-105 transition-all duration-300">
+                    <div class="text-gold text-2xl mb-4">✅</div>
+                    <p>Conteúdo visual moderno, dinâmico e leve</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 fade-in hover:scale-105 transition-all duration-300 md:col-span-2 lg:col-span-2">
+                    <div class="text-gold text-2xl mb-4">✅</div>
+                    <p>Acesso vitalício — o e-book é seu para sempre</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">
+                <span class="text-gold">📘</span> O QUE VOCÊ VAI ENCONTRAR NO E-BOOK
+            </h2>
+            
+            <div class="glass-card rounded-2xl p-8 fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-4">
+                        <span class="text-gold text-2xl">📚</span>
+                        <div>
+                            <h3 class="font-semibold mb-2">Resumos diretos e organizados por tema</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-gold text-2xl">🎯</span>
+                        <div>
+                            <h3 class="font-semibold mb-2">Questões do Enem dos últimos anos comentadas</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-gold text-2xl">🧠</span>
+                        <div>
+                            <h3 class="font-semibold mb-2">Técnicas de estudo e memorização rápida</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-gold text-2xl">✍️</span>
+                        <div>
+                            <h3 class="font-semibold mb-2">Espaços para anotações e autoavaliação</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 md:col-span-2">
+                        <span class="text-gold text-2xl">📄</span>
+                        <div>
+                            <h3 class="font-semibold mb-2">PDF compatível com celular, tablet e computador</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preço Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 fade-in">
+                <span class="text-gold">💰</span> INVESTIMENTO
+            </h2>
+            
+            <div class="glass-card rounded-2xl p-8 mb-8 fade-in gold-glow">
+                <div class="text-gray-400 text-xl line-through mb-2">De R$ 99,90</div>
+                <div class="text-5xl md:text-6xl font-bold text-gold mb-4">R$ 37,90</div>
+                <div class="text-xl text-gold font-semibold">💥 Oferta especial por tempo limitado!</div>
+                <p class="mt-4 text-gray-200">Baixe agora e garante o seu exemplar digital.</p>
+            </div>
+            
+            <button class="bg-gold text-dark-blue font-bold text-xl px-12 py-4 rounded-full hover:scale-105 transform transition-all duration-300 pulse-glow fade-in">
+                COMPRAR MEU E-BOOK AGORA
+            </button>
+        </div>
+    </section>
+
+    <!-- Para Quem É Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">
+                <span class="text-gold">🧠</span> PARA QUEM É ESTE E-BOOK?
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <p>Estudantes do ensino médio que vão fazer o Enem 2025</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <p>Quem quer revisar os conteúdos mais cobrados de forma rápida</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <p>Quem busca um guia prático e direto, sem enrolação</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <p>Candidatos de concursos e vestibulares que cobram conteúdo do Enem</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">
+                <span class="text-gold">📩</span> COMO FUNCIONA A COMPRA
+            </h2>
+            
+            <div class="glass-card rounded-2xl p-8 fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-gold text-2xl">💳</span>
+                        <span>Pagamento único — sem mensalidades</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-gold text-2xl">📧</span>
+                        <span>Receba o e-book diretamente no seu e-mail após a confirmação</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-gold text-2xl">📱</span>
+                        <span>Leia onde quiser: celular, tablet ou computador</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-gold text-2xl">♾️</span>
+                        <span>Acesso vitalício — o arquivo é seu para sempre</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">
+                <span class="text-gold">❓</span> DÚVIDAS FREQUENTES
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <h3 class="font-bold text-gold mb-2">O que recebo após a compra?</h3>
+                    <p>Um link seguro para download imediato do e-book "Questão do Enem 2025".</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <h3 class="font-bold text-gold mb-2">Posso parcelar o pagamento?</h3>
+                    <p>Sim! Em até 12x no cartão.</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <h3 class="font-bold text-gold mb-2">É seguro?</h3>
+                    <p>Sim! Pagamento 100% protegido e acesso automático após aprovação.</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 fade-in">
+                    <h3 class="font-bold text-gold mb-2">O e-book tem garantia?</h3>
+                    <p>Sim! Caso tenha qualquer problema, você pode solicitar suporte direto por e-mail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suporte Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 fade-in">
+                <span class="text-gold">📞</span> SUPORTE
+            </h2>
+            <div class="glass-card rounded-xl p-6 fade-in">
+                <p>Ficou com dúvidas? Envie um e-mail para <span class="text-gold font-semibold">unlimitedgamerhdd@gmail.com</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 px-4">
+        <div class="max-w-2xl mx-auto text-center">
+            <button class="bg-gold text-dark-blue font-bold text-2xl px-16 py-6 rounded-full hover:scale-105 transform transition-all duration-300 pulse-glow fade-in">
+                GARANTIR MEU E-BOOK AGORA
+            </button>
+            <p class="mt-4 text-gray-300 fade-in">Acesso imediato após a confirmação do pagamento</p>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+
+        // Button click handlers
+        document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Efeito visual
+        const ripple = document.createElement('div');
+        ripple.style.position = 'absolute';
+        ripple.style.borderRadius = '50%';
+        ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+        ripple.style.transform = 'scale(0)';
+        ripple.style.animation = 'ripple 0.6s linear';
+        ripple.style.left = '50%';
+        ripple.style.top = '50%';
+        ripple.style.width = '20px';
+        ripple.style.height = '20px';
+        ripple.style.marginLeft = '-10px';
+        ripple.style.marginTop = '-10px';
+
+        button.style.position = 'relative';
+        button.style.overflow = 'hidden';
+        button.appendChild(ripple);
+
+        setTimeout(() => ripple.remove(), 600);
+
+        // Animação e abertura em nova aba
+const originalText = button.textContent;
+button.textContent = 'PROCESSANDO...';
+button.style.background = '#94A3B8';
+
+// Mostra "Redirecionando..." e abre nova aba
+setTimeout(() => {
+    button.textContent = 'REDIRECIONANDO...';
+
+    // ⚡ Restaura o botão antes de abrir a nova aba
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.style.background = ''; // volta à cor original
+    }, 500);
+
+    // 🔗 Abre o link do e-book em nova aba
+    window.open('https://google.com', '_blank');
+}, 1000);
+    });
+});
+
+        // Add ripple animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e940b0f4d1f1c9',t:'MTc2MDQ2NzcyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
